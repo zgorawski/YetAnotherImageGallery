@@ -14,6 +14,8 @@
 		99FFEB451E5B8241003A3F77 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99FFEB431E5B8241003A3F77 /* LaunchScreen.storyboard */; };
 		99FFEB501E5B8241003A3F77 /* YetAnotherImageGalleryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FFEB4F1E5B8241003A3F77 /* YetAnotherImageGalleryTests.swift */; };
 		99FFEB5B1E5B8241003A3F77 /* YetAnotherImageGalleryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FFEB5A1E5B8241003A3F77 /* YetAnotherImageGalleryUITests.swift */; };
+		99FFEB691E5B84E7003A3F77 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 99FFEB681E5B84E7003A3F77 /* Cartfile */; };
+		99FFEB6B1E5B89A0003A3F77 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 99FFEB6A1E5B89A0003A3F77 /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		99FFEB561E5B8241003A3F77 /* YetAnotherImageGalleryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YetAnotherImageGalleryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		99FFEB5A1E5B8241003A3F77 /* YetAnotherImageGalleryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YetAnotherImageGalleryUITests.swift; sourceTree = "<group>"; };
 		99FFEB5C1E5B8241003A3F77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		99FFEB681E5B84E7003A3F77 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
+		99FFEB6A1E5B89A0003A3F77 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +81,8 @@
 		99FFEB2E1E5B8240003A3F77 = {
 			isa = PBXGroup;
 			children = (
+				99FFEB6A1E5B89A0003A3F77 /* .gitignore */,
+				99FFEB681E5B84E7003A3F77 /* Cartfile */,
 				99FFEB391E5B8241003A3F77 /* YetAnotherImageGallery */,
 				99FFEB4E1E5B8241003A3F77 /* YetAnotherImageGalleryTests */,
 				99FFEB591E5B8241003A3F77 /* YetAnotherImageGalleryUITests */,
@@ -235,8 +241,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99FFEB6B1E5B89A0003A3F77 /* .gitignore in Resources */,
 				99FFEB451E5B8241003A3F77 /* LaunchScreen.storyboard in Resources */,
 				99FFEB421E5B8241003A3F77 /* Assets.xcassets in Resources */,
+				99FFEB691E5B84E7003A3F77 /* Cartfile in Resources */,
 				99FFEB401E5B8241003A3F77 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -514,6 +522,7 @@
 				99FFEB611E5B8241003A3F77 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		99FFEB621E5B8241003A3F77 /* Build configuration list for PBXNativeTarget "YetAnotherImageGalleryTests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +531,7 @@
 				99FFEB641E5B8241003A3F77 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		99FFEB651E5B8241003A3F77 /* Build configuration list for PBXNativeTarget "YetAnotherImageGalleryUITests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +540,7 @@
 				99FFEB671E5B8241003A3F77 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
