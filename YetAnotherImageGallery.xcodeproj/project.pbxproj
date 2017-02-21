@@ -12,6 +12,10 @@
 		99F907D31E5CA10400FF0920 /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99F907D21E5CA10400FF0920 /* AlamofireImage.framework */; };
 		99F907D51E5CA10A00FF0920 /* DZNEmptyDataSet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99F907D41E5CA10A00FF0920 /* DZNEmptyDataSet.framework */; };
 		99F907D71E5CA11200FF0920 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99F907D61E5CA11200FF0920 /* SwiftyJSON.framework */; };
+		99F907DA1E5CA23C00FF0920 /* NetworkingEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F907D91E5CA23C00FF0920 /* NetworkingEngine.swift */; };
+		99F907DC1E5CA2DD00FF0920 /* RequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F907DB1E5CA2DD00FF0920 /* RequestProtocol.swift */; };
+		99F907DE1E5CA2ED00FF0920 /* InterpreterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F907DD1E5CA2ED00FF0920 /* InterpreterProtocol.swift */; };
+		99F907E01E5CA31400FF0920 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F907DF1E5CA31400FF0920 /* Response.swift */; };
 		99FFEB3B1E5B8241003A3F77 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FFEB3A1E5B8241003A3F77 /* AppDelegate.swift */; };
 		99FFEB421E5B8241003A3F77 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99FFEB411E5B8241003A3F77 /* Assets.xcassets */; };
 		99FFEB451E5B8241003A3F77 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99FFEB431E5B8241003A3F77 /* LaunchScreen.storyboard */; };
@@ -44,6 +48,10 @@
 		99F907D21E5CA10400FF0920 /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = Carthage/Build/iOS/AlamofireImage.framework; sourceTree = "<group>"; };
 		99F907D41E5CA10A00FF0920 /* DZNEmptyDataSet.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DZNEmptyDataSet.framework; path = Carthage/Build/iOS/DZNEmptyDataSet.framework; sourceTree = "<group>"; };
 		99F907D61E5CA11200FF0920 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
+		99F907D91E5CA23C00FF0920 /* NetworkingEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkingEngine.swift; sourceTree = "<group>"; };
+		99F907DB1E5CA2DD00FF0920 /* RequestProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestProtocol.swift; sourceTree = "<group>"; };
+		99F907DD1E5CA2ED00FF0920 /* InterpreterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterpreterProtocol.swift; sourceTree = "<group>"; };
+		99F907DF1E5CA31400FF0920 /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		99FFEB371E5B8241003A3F77 /* YetAnotherImageGallery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YetAnotherImageGallery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99FFEB3A1E5B8241003A3F77 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		99FFEB411E5B8241003A3F77 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -91,6 +99,10 @@
 		99F907C81E5C9E7000FF0920 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				99F907D91E5CA23C00FF0920 /* NetworkingEngine.swift */,
+				99F907DB1E5CA2DD00FF0920 /* RequestProtocol.swift */,
+				99F907DD1E5CA2ED00FF0920 /* InterpreterProtocol.swift */,
+				99F907DF1E5CA31400FF0920 /* Response.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -352,7 +364,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99F907DC1E5CA2DD00FF0920 /* RequestProtocol.swift in Sources */,
 				99FFEB3B1E5B8241003A3F77 /* AppDelegate.swift in Sources */,
+				99F907DE1E5CA2ED00FF0920 /* InterpreterProtocol.swift in Sources */,
+				99F907DA1E5CA23C00FF0920 /* NetworkingEngine.swift in Sources */,
+				99F907E01E5CA31400FF0920 /* Response.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
