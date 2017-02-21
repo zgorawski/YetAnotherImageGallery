@@ -10,6 +10,12 @@ import Foundation
 
 struct FlickrFeedItem {
     
+    let author: String
+    let authorId: String
+    let published: String
+    let dateTaken: String
+    let title: String
+    let tags: [String]
 }
 
 enum FlickrFeedError: Error {
