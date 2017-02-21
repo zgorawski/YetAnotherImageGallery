@@ -10,29 +10,33 @@ import UIKit
 
 class ImageDetailsViewController: UIViewController {
     
+    // dependencies
+    fileprivate var imageDetailsDataSource: ImageDetailsDataSource!
+    
     // model
     var selectedFeed: FlickrFeedItem!
+    
+    // outlets
+    @IBOutlet weak var tableView: UITableView!
+    
+    // actions
 
+}
+
+// TODO: move those extensions to sepratate files, if they grow too much
+
+// MARK: VC lifecycle
+extension ImageDetailsViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        imageDetailsDataSource = ImageDetailsDataSource(model: selectedFeed)
 
-        // Do any additional setup after loading the view.
+        tableView.dataSource = imageDetailsDataSource
+        tableView.tableFooterView = UIView() // common hack to hide extra rows
+        
+        tableView.estimatedRowHeight = 40.0
+        tableView.rowHeight = UITableViewAutomaticDimension
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

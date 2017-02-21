@@ -13,7 +13,6 @@ class ImageListTableDataSource: NSObject {
     
     // dependencies
     fileprivate let flickrFeedController: FlickrFeedController // TODO: make it protocol type, to allow mocking
-    fileprivate let imageCache = AutoPurgingImageCache()
     
     // properties
     fileprivate var emptyModelMessage: String? = "Loading images"
