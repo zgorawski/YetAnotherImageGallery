@@ -12,28 +12,66 @@ class ImageListViewController: UIViewController {
     
     // dependency
     // TODO: make it injectable
-    let imageListDataSource = ImageListTableDataSource()
-
+    fileprivate let imageListDataSource = ImageListTableDataSource()
+    
+    // model
+    fileprivate var selectedFeed: FlickrFeedItem?
+    
+    // outlets
     @IBOutlet weak var tableView: UITableView!
+    
+    // consts
+    fileprivate let detailsSegueId = "ImageDetailsSegue"
+}
+
+// TODO: move those extensions to sepratate files, if they grow too much
+
+// MARK: VC lifecycle
+extension ImageListViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         
+        tableView.delegate = self
         tableView.dataSource = imageListDataSource
         imageListDataSource.refreshData(tableView: tableView)
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.isNavigationBarHidden = true
     }
-    */
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        navigationController?.isNavigationBarHidden = false
+    }
+}
 
+// MARK: - Navigation
+extension ImageListViewController {
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        guard
+            segue.identifier == detailsSegueId,
+            let selectedFeed = selectedFeed,
+            let vc = segue.destination as? ImageDetailsViewController
+        else { return }
+        
+        vc.selectedFeed = selectedFeed
+    }
+}
+
+extension ImageListViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedFeed = imageListDataSource.getFeedItem(indexPath)
+        performSegue(withIdentifier: detailsSegueId, sender: self)
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 }

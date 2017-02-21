@@ -9,6 +9,9 @@
 import UIKit
 
 class ImageDetailsViewController: UIViewController {
+    
+    // model
+    var selectedFeed: FlickrFeedItem!
 
     override func viewDidLoad() {
         super.viewDidLoad()

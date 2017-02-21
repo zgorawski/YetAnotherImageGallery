@@ -41,6 +41,10 @@ class ImageListTableDataSource: NSObject {
         }
     }
     
+    func getFeedItem(_ indexPath: IndexPath) -> FlickrFeedItem {
+        return model[indexPath.row]
+    }
+    
 }
 
 extension ImageListTableDataSource: UITableViewDataSource {

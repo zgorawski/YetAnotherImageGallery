@@ -42,18 +42,18 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ImageListTableViewCell" rowHeight="180" id="KZu-Kt-pNK" customClass="ImageListTableViewCell" customModule="YetAnotherImageGallery" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="180"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ImageListTableViewCell" rowHeight="200" id="KZu-Kt-pNK" customClass="ImageListTableViewCell" customModule="YetAnotherImageGallery" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KZu-Kt-pNK" id="0pv-eA-sUS">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="179"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="199"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PPd-4f-hMa">
-                                                    <rect key="frame" x="0.0" y="0.0" width="342" height="179"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="342" height="199.5"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mhd-eV-VT9">
-                                                    <rect key="frame" x="14" y="150" width="320" height="21"/>
+                                                    <rect key="frame" x="14" y="170.5" width="320" height="21"/>
                                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.28978488869863012" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -73,7 +73,6 @@
                                         <connections>
                                             <outlet property="descriptionLabel" destination="mhd-eV-VT9" id="k91-if-bfY"/>
                                             <outlet property="mainImageView" destination="PPd-4f-hMa" id="dfu-el-rac"/>
-                                            <segue destination="MJd-rr-gzH" kind="show" id="SJo-Kg-SHo"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -90,6 +89,7 @@
                     <navigationItem key="navigationItem" id="nkJ-mz-gbH"/>
                     <connections>
                         <outlet property="tableView" destination="inB-Bq-yaB" id="mYO-C5-VJS"/>
+                        <segue destination="MJd-rr-gzH" kind="show" identifier="ImageDetailsSegue" id="cnl-oo-QNW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NdW-WZ-win" userLabel="First Responder" sceneMemberID="firstResponder"/>
