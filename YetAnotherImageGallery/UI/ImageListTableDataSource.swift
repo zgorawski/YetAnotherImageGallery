@@ -54,8 +54,8 @@ extension ImageListTableDataSource: UITableViewDataSource {
         let feedModel = model[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ImageListTableViewCell.self), for: indexPath) as! ImageListTableViewCell
         
-        cell.mainImageView.af_setImage(withURL: feedModel.imageUrl)
-        cell.descriptionLabel.text = "\(feedModel.title) by \(feedModel.author)"
+        cell.mainImageView.af_setImage(withURL: feedModel.imageUrl) // af_setImage also does caching
+        cell.descriptionLabel.text = feedModel.author
         
         return cell
     }
