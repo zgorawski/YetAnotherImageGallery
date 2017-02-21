@@ -25,10 +25,10 @@
             </objects>
             <point key="canvasLocation" x="-646" y="188"/>
         </scene>
-        <!--View Controller-->
+        <!--Image List View Controller-->
         <scene sceneID="JAG-dd-nG0">
             <objects>
-                <viewController id="o6A-oc-81J" sceneMemberID="viewController">
+                <viewController id="o6A-oc-81J" customClass="ImageListViewController" customModule="YetAnotherImageGallery" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="TiW-hl-r9l"/>
                         <viewControllerLayoutGuide type="bottom" id="Q4O-74-yLq"/>
@@ -69,10 +69,10 @@
             </objects>
             <point key="canvasLocation" x="157.59999999999999" y="187.55622188905548"/>
         </scene>
-        <!--View Controller-->
+        <!--Image Details View Controller-->
         <scene sceneID="2Qy-Pf-qjR">
             <objects>
-                <viewController id="MJd-rr-gzH" sceneMemberID="viewController">
+                <viewController id="MJd-rr-gzH" customClass="ImageDetailsViewController" customModule="YetAnotherImageGallery" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="amK-Gv-NUb"/>
                         <viewControllerLayoutGuide type="bottom" id="PE1-ll-Ede"/>

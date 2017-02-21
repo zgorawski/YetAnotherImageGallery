@@ -11,7 +11,7 @@ import Alamofire
 
 protocol NetworkRequest {
     
-    var httpMethod: HTTPMethod{ get }
+    var httpMethod: HTTPMethod { get }
     var host: String { get }
     var endpoint: String { get }
     

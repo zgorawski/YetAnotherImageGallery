@@ -10,12 +10,17 @@ import Alamofire
 
 typealias IsRequestValid = Bool
 
-class NetworkingEngine {
+protocol NetworkingEngineProtocol {
+    
+    @discardableResult
+    func performRequest<Req: NetworkRequest>(request: Req, handler: @escaping (Response<Req.InterpreterType.SuccessType, Req.InterpreterType.ErrorType>) -> Void ) -> IsRequestValid
+}
+
+class NetworkingEngine: NetworkingEngineProtocol {
     
     // MARK: API
     
-    @discardableResult
-    open func performRequest<Req: NetworkRequest>(request: Req, handler: @escaping (Response<Req.InterpreterType.SuccessType, Req.InterpreterType.ErrorType>) -> Void ) -> IsRequestValid  {
+    func performRequest<Req: NetworkRequest>(request: Req, handler: @escaping (Response<Req.InterpreterType.SuccessType, Req.InterpreterType.ErrorType>) -> Void ) -> IsRequestValid  {
         
         guard let url = computeURL(request) else { return false }
         
