@@ -10,6 +10,7 @@ import Foundation
 
 struct FlickrFeedItem {
     
+    let imageUrl: URL
     let author: String
     let authorId: String
     let published: Date

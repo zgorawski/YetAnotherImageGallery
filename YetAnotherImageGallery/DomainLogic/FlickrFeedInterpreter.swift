@@ -24,6 +24,8 @@ class FlickrFeedInterpreter: NetworkResponseInterpreter {
         let events: [FlickrFeedItem] = feedItemsJson.flatMap { innerJson in
             
             guard
+                let imageUrlString = innerJson["media"]["m"].string,
+                let imageUrl = URL(string: imageUrlString),
                 let author = innerJson["author"].string,
                 let authorId = innerJson["author_id"].string,
                 let published = innerJson["published"].string?.dateInISO8601Format(),
@@ -32,7 +34,7 @@ class FlickrFeedInterpreter: NetworkResponseInterpreter {
                 let tags = innerJson["tags"].string?.components(separatedBy: " ")
                 else { return nil }
             
-            return FlickrFeedItem(author: author, authorId: authorId, published: published, dateTaken: dateTaken, title: title, tags: tags)
+            return FlickrFeedItem(imageUrl: imageUrl, author: author, authorId: authorId, published: published, dateTaken: dateTaken, title: title, tags: tags)
         }
         
         return Response.success(events)

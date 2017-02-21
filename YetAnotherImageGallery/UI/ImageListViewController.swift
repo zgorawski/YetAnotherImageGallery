@@ -10,23 +10,21 @@ import UIKit
 
 class ImageListViewController: UIViewController {
     
-    let ffc = FlickrFeedController()
+    // dependency
+    // TODO: make it injectable
+    let imageListDataSource = ImageListTableDataSource()
 
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
-        ffc.fetchFeed { response in
-            print(response)
-        }
+        tableView.dataSource = imageListDataSource
+        imageListDataSource.refreshData(tableView: tableView)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
 
     /*
     // MARK: - Navigation
