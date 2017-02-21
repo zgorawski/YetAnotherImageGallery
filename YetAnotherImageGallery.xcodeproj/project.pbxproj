@@ -21,6 +21,8 @@
 		99F907E71E5CAB0F00FF0920 /* FlickrFeedRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F907E61E5CAB0F00FF0920 /* FlickrFeedRequest.swift */; };
 		99F907E91E5CAE4B00FF0920 /* ImageListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F907E81E5CAE4B00FF0920 /* ImageListViewController.swift */; };
 		99F907EB1E5CAE5C00FF0920 /* ImageDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F907EA1E5CAE5C00FF0920 /* ImageDetailsViewController.swift */; };
+		99F907ED1E5CBF3700FF0920 /* Timepiece.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99F907EC1E5CBF3700FF0920 /* Timepiece.framework */; };
+		99F907EF1E5CBF9400FF0920 /* FlickrFeedInterpreter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F907EE1E5CBF9400FF0920 /* FlickrFeedInterpreter.swift */; };
 		99FFEB3B1E5B8241003A3F77 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FFEB3A1E5B8241003A3F77 /* AppDelegate.swift */; };
 		99FFEB421E5B8241003A3F77 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99FFEB411E5B8241003A3F77 /* Assets.xcassets */; };
 		99FFEB451E5B8241003A3F77 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99FFEB431E5B8241003A3F77 /* LaunchScreen.storyboard */; };
@@ -62,6 +64,8 @@
 		99F907E61E5CAB0F00FF0920 /* FlickrFeedRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlickrFeedRequest.swift; sourceTree = "<group>"; };
 		99F907E81E5CAE4B00FF0920 /* ImageListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageListViewController.swift; sourceTree = "<group>"; };
 		99F907EA1E5CAE5C00FF0920 /* ImageDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDetailsViewController.swift; sourceTree = "<group>"; };
+		99F907EC1E5CBF3700FF0920 /* Timepiece.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Timepiece.framework; path = Carthage/Build/iOS/Timepiece.framework; sourceTree = "<group>"; };
+		99F907EE1E5CBF9400FF0920 /* FlickrFeedInterpreter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlickrFeedInterpreter.swift; sourceTree = "<group>"; };
 		99FFEB371E5B8241003A3F77 /* YetAnotherImageGallery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YetAnotherImageGallery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99FFEB3A1E5B8241003A3F77 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		99FFEB411E5B8241003A3F77 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -86,6 +90,7 @@
 				99F907D31E5CA10400FF0920 /* AlamofireImage.framework in Frameworks */,
 				99F907D71E5CA11200FF0920 /* SwiftyJSON.framework in Frameworks */,
 				99F907D51E5CA10A00FF0920 /* DZNEmptyDataSet.framework in Frameworks */,
+				99F907ED1E5CBF3700FF0920 /* Timepiece.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,6 +160,7 @@
 		99F907CF1E5CA10000FF0920 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				99F907EC1E5CBF3700FF0920 /* Timepiece.framework */,
 				99F907D61E5CA11200FF0920 /* SwiftyJSON.framework */,
 				99F907D41E5CA10A00FF0920 /* DZNEmptyDataSet.framework */,
 				99F907D21E5CA10400FF0920 /* AlamofireImage.framework */,
@@ -169,6 +175,7 @@
 				99F907E11E5CA82F00FF0920 /* FlickrFeedController.swift */,
 				99F907E41E5CA89500FF0920 /* FlickrFeedModel.swift */,
 				99F907E61E5CAB0F00FF0920 /* FlickrFeedRequest.swift */,
+				99F907EE1E5CBF9400FF0920 /* FlickrFeedInterpreter.swift */,
 			);
 			name = FlickrFeed;
 			sourceTree = "<group>";
@@ -373,6 +380,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/AlamofireImage.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/DZNEmptyDataSet.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Timepiece.framework",
 			);
 			outputPaths = (
 			);
@@ -394,6 +402,7 @@
 				99F907EB1E5CAE5C00FF0920 /* ImageDetailsViewController.swift in Sources */,
 				99FFEB3B1E5B8241003A3F77 /* AppDelegate.swift in Sources */,
 				99F907DE1E5CA2ED00FF0920 /* InterpreterProtocol.swift in Sources */,
+				99F907EF1E5CBF9400FF0920 /* FlickrFeedInterpreter.swift in Sources */,
 				99F907E91E5CAE4B00FF0920 /* ImageListViewController.swift in Sources */,
 				99F907DA1E5CA23C00FF0920 /* NetworkingEngine.swift in Sources */,
 				99F907E01E5CA31400FF0920 /* ResponseModel.swift in Sources */,

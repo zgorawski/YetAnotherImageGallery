@@ -12,8 +12,8 @@ struct FlickrFeedItem {
     
     let author: String
     let authorId: String
-    let published: String
-    let dateTaken: String
+    let published: Date
+    let dateTaken: Date
     let title: String
     let tags: [String]
 }
