@@ -163,7 +163,11 @@
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="jDk-Ub-Mfs"/>
-                                    <barButtonItem systemItem="action" id="ulS-lr-ehu"/>
+                                    <barButtonItem systemItem="action" id="ulS-lr-ehu">
+                                        <connections>
+                                            <action selector="onShareButtonTap:" destination="MJd-rr-gzH" id="I4z-Xd-nEQ"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="SoC-gu-P5c"/>
                                 </items>
                             </toolbar>

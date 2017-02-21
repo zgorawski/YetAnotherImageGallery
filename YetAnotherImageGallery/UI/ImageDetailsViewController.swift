@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class ImageDetailsViewController: UIViewController {
     
     // dependencies
     fileprivate var imageDetailsDataSource: ImageDetailsDataSource!
+    var imageCache: AutoPurgingImageCache!
     
     // model
     var selectedFeed: FlickrFeedItem!
@@ -21,6 +23,15 @@ class ImageDetailsViewController: UIViewController {
     
     // actions
 
+    @IBAction func onShareButtonTap(_ sender: UIBarButtonItem) {
+        
+        guard let img = imageCache.image(withIdentifier: selectedFeed.imageUrl.absoluteString) else { return }
+        
+        let activityViewController = UIActivityViewController(activityItems: [img], applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = view
+        
+        present(activityViewController, animated: true, completion: nil)
+    }
 }
 
 // TODO: move those extensions to sepratate files, if they grow too much

@@ -17,14 +17,16 @@ class ImageListTableDataSource: NSObject {
     
     // dependencies
     fileprivate let flickrFeedController: FlickrFeedController // TODO: make it protocol type, to allow mocking
+    fileprivate let imageCache: AutoPurgingImageCache
     
     // properties
     fileprivate var emptyModelMessage: String? = "Loading images"
     fileprivate var model: [FlickrFeedItem] = []
     fileprivate weak var tableView: UITableView!
     
-    init(tableView: UITableView, flickrFeedController: FlickrFeedController = FlickrFeedController()) {
+    init(tableView: UITableView, imageCache: AutoPurgingImageCache, flickrFeedController: FlickrFeedController = FlickrFeedController()) {
         
+        self.imageCache = imageCache
         self.tableView = tableView
         self.flickrFeedController = flickrFeedController
     }
@@ -75,8 +77,15 @@ extension ImageListTableDataSource: UITableViewDataSource {
         
         let feedModel = model[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ImageListTableViewCell.self), for: indexPath) as! ImageListTableViewCell
+
+        cell.mainImageView.af_setImage(withURL: feedModel.imageUrl) { [weak self] imageResponse in
+            
+            DispatchQueue.main.async {
+                guard let image = imageResponse.value else { return }
+                self?.imageCache.add(image, withIdentifier: feedModel.imageUrl.absoluteString)
+            }
+        }
         
-        cell.mainImageView.af_setImage(withURL: feedModel.imageUrl) // af_setImage also does caching
         cell.descriptionLabel.text = feedModel.author
         
         return cell

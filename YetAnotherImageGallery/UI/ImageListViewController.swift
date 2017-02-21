@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class ImageListViewController: UIViewController {
     
     // dependency
     // TODO: make it injectable
     fileprivate var imageListDataSource : ImageListTableDataSource!
+    fileprivate let imageCache = AutoPurgingImageCache()
     
     // model
     fileprivate var selectedFeed: FlickrFeedItem?
@@ -45,7 +47,7 @@ extension ImageListViewController {
         
         // Do any additional setup after loading the view.
         
-        imageListDataSource = ImageListTableDataSource(tableView: tableView)
+        imageListDataSource = ImageListTableDataSource(tableView: tableView, imageCache: imageCache)
         tableView.delegate = self
         tableView.dataSource = imageListDataSource
         imageListDataSource.refreshData()
@@ -76,6 +78,7 @@ extension ImageListViewController {
         else { return }
         
         vc.selectedFeed = selectedFeed
+        vc.imageCache = imageCache
     }
 }
 
