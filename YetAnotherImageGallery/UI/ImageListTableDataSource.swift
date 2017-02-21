@@ -9,6 +9,10 @@
 import UIKit
 import AlamofireImage
 
+enum ImageListSortOption {
+    case dateTaken, datePublished
+}
+
 class ImageListTableDataSource: NSObject {
     
     // dependencies
@@ -17,13 +21,16 @@ class ImageListTableDataSource: NSObject {
     // properties
     fileprivate var emptyModelMessage: String? = "Loading images"
     fileprivate var model: [FlickrFeedItem] = []
+    fileprivate weak var tableView: UITableView!
     
-    init(flickrFeedController: FlickrFeedController = FlickrFeedController()) {
+    init(tableView: UITableView, flickrFeedController: FlickrFeedController = FlickrFeedController()) {
+        
+        self.tableView = tableView
         self.flickrFeedController = flickrFeedController
     }
     
     // MARK: API
-    func refreshData(tableView: UITableView) {
+    func refreshData() {
         
         flickrFeedController.fetchFeed { [weak self] response in
             
@@ -36,12 +43,24 @@ class ImageListTableDataSource: NSObject {
                 self?.emptyModelMessage = error.localizedDescription
             }
             
-            tableView.reloadData()
+            self?.tableView.reloadData()
         }
     }
     
     func getFeedItem(_ indexPath: IndexPath) -> FlickrFeedItem {
         return model[indexPath.row]
+    }
+    
+    func sortBy(_ option: ImageListSortOption) {
+        
+        switch option {
+        case .datePublished:
+            model.sort(by: { $0.published > $1.published})
+        case .dateTaken:
+            model.sort(by: { $0.dateTaken > $1.dateTaken})
+        }
+        
+        tableView.reloadData() //TODO: this is lazy way to sort TV - refactor
     }
     
 }

@@ -81,9 +81,17 @@
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="r5x-BF-9nf"/>
-                                    <barButtonItem title="Date taken" id="SHp-F2-hYW"/>
+                                    <barButtonItem title="Date taken" id="SHp-F2-hYW">
+                                        <connections>
+                                            <action selector="onDateTakenTap:" destination="o6A-oc-81J" id="f81-Jv-VfI"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="ycQ-Qt-bwJ"/>
-                                    <barButtonItem title="Date published" id="LHO-5e-b27"/>
+                                    <barButtonItem title="Date published" id="LHO-5e-b27">
+                                        <connections>
+                                            <action selector="onDatePublishedTap:" destination="o6A-oc-81J" id="Iln-DT-6tc"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="5h7-EE-TwN"/>
                                 </items>
                             </toolbar>

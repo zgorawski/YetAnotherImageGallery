@@ -12,7 +12,7 @@ class ImageListViewController: UIViewController {
     
     // dependency
     // TODO: make it injectable
-    fileprivate let imageListDataSource = ImageListTableDataSource()
+    fileprivate var imageListDataSource : ImageListTableDataSource!
     
     // model
     fileprivate var selectedFeed: FlickrFeedItem?
@@ -22,6 +22,17 @@ class ImageListViewController: UIViewController {
     
     // consts
     fileprivate let detailsSegueId = "ImageDetailsSegue"
+    
+    // MARK: IBActions
+    
+    @IBAction func onDateTakenTap(_ sender: UIBarButtonItem) {
+        imageListDataSource.sortBy(.dateTaken)
+    }
+    
+    @IBAction func onDatePublishedTap(_ sender: UIBarButtonItem) {
+        imageListDataSource.sortBy(.datePublished)
+    }
+    
 }
 
 // TODO: move those extensions to sepratate files, if they grow too much
@@ -34,9 +45,10 @@ extension ImageListViewController {
         
         // Do any additional setup after loading the view.
         
+        imageListDataSource = ImageListTableDataSource(tableView: tableView)
         tableView.delegate = self
         tableView.dataSource = imageListDataSource
-        imageListDataSource.refreshData(tableView: tableView)
+        imageListDataSource.refreshData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
