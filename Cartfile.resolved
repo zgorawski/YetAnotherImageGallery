@@ -1,0 +1,4 @@
+github "Alamofire/Alamofire" "4.3.0"
+github "dzenbot/DZNEmptyDataSet" "v1.8.1"
+github "SwiftyJSON/SwiftyJSON" "3.1.4"
+github "Alamofire/AlamofireImage" "3.2.0"

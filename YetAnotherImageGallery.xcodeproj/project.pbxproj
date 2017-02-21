@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		99F907CE1E5C9F4A00FF0920 /* ImagesList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99F907CD1E5C9F4A00FF0920 /* ImagesList.storyboard */; };
+		99F907D11E5CA10000FF0920 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99F907D01E5CA10000FF0920 /* Alamofire.framework */; };
+		99F907D31E5CA10400FF0920 /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99F907D21E5CA10400FF0920 /* AlamofireImage.framework */; };
+		99F907D51E5CA10A00FF0920 /* DZNEmptyDataSet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99F907D41E5CA10A00FF0920 /* DZNEmptyDataSet.framework */; };
+		99F907D71E5CA11200FF0920 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99F907D61E5CA11200FF0920 /* SwiftyJSON.framework */; };
 		99FFEB3B1E5B8241003A3F77 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FFEB3A1E5B8241003A3F77 /* AppDelegate.swift */; };
 		99FFEB421E5B8241003A3F77 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99FFEB411E5B8241003A3F77 /* Assets.xcassets */; };
 		99FFEB451E5B8241003A3F77 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99FFEB431E5B8241003A3F77 /* LaunchScreen.storyboard */; };
@@ -36,6 +40,10 @@
 
 /* Begin PBXFileReference section */
 		99F907CD1E5C9F4A00FF0920 /* ImagesList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ImagesList.storyboard; sourceTree = "<group>"; };
+		99F907D01E5CA10000FF0920 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		99F907D21E5CA10400FF0920 /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = Carthage/Build/iOS/AlamofireImage.framework; sourceTree = "<group>"; };
+		99F907D41E5CA10A00FF0920 /* DZNEmptyDataSet.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DZNEmptyDataSet.framework; path = Carthage/Build/iOS/DZNEmptyDataSet.framework; sourceTree = "<group>"; };
+		99F907D61E5CA11200FF0920 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		99FFEB371E5B8241003A3F77 /* YetAnotherImageGallery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YetAnotherImageGallery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99FFEB3A1E5B8241003A3F77 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		99FFEB411E5B8241003A3F77 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -56,6 +64,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99F907D11E5CA10000FF0920 /* Alamofire.framework in Frameworks */,
+				99F907D31E5CA10400FF0920 /* AlamofireImage.framework in Frameworks */,
+				99F907D71E5CA11200FF0920 /* SwiftyJSON.framework in Frameworks */,
+				99F907D51E5CA10A00FF0920 /* DZNEmptyDataSet.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,6 +127,17 @@
 			name = ImagesList;
 			sourceTree = "<group>";
 		};
+		99F907CF1E5CA10000FF0920 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				99F907D61E5CA11200FF0920 /* SwiftyJSON.framework */,
+				99F907D41E5CA10A00FF0920 /* DZNEmptyDataSet.framework */,
+				99F907D21E5CA10400FF0920 /* AlamofireImage.framework */,
+				99F907D01E5CA10000FF0920 /* Alamofire.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		99FFEB2E1E5B8240003A3F77 = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +147,7 @@
 				99FFEB4E1E5B8241003A3F77 /* YetAnotherImageGalleryTests */,
 				99FFEB591E5B8241003A3F77 /* YetAnotherImageGalleryUITests */,
 				99FFEB381E5B8241003A3F77 /* Products */,
+				99F907CF1E5CA10000FF0920 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -178,6 +202,7 @@
 				99FFEB331E5B8241003A3F77 /* Sources */,
 				99FFEB341E5B8241003A3F77 /* Frameworks */,
 				99FFEB351E5B8241003A3F77 /* Resources */,
+				99F907D81E5CA14200FF0920 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -301,6 +326,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		99F907D81E5CA14200FF0920 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/AlamofireImage.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/DZNEmptyDataSet.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		99FFEB331E5B8241003A3F77 /* Sources */ = {
@@ -453,6 +498,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 9N8WSR7KDY;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = YetAnotherImageGallery/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ZG.YetAnotherImageGallery;
@@ -466,6 +515,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 9N8WSR7KDY;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = YetAnotherImageGallery/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ZG.YetAnotherImageGallery;
