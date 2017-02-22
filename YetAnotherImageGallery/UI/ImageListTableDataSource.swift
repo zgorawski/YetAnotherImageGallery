@@ -8,6 +8,7 @@
 
 import UIKit
 import AlamofireImage
+import DZNEmptyDataSet
 
 enum ImageListSortOption {
     case dateTaken, datePublished
@@ -29,6 +30,10 @@ class ImageListTableDataSource: NSObject {
         self.imageCache = imageCache
         self.tableView = tableView
         self.flickrFeedController = flickrFeedController
+        
+        super.init()
+        
+        tableView.emptyDataSetSource = self
     }
     
     // MARK: API
@@ -90,4 +95,14 @@ extension ImageListTableDataSource: UITableViewDataSource {
         
         return cell
     }
+}
+
+extension ImageListTableDataSource: DZNEmptyDataSetSource {
+    
+    func description(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+        
+        let message = emptyModelMessage ?? ""
+        return NSAttributedString(string: message)
+    }
+    
 }

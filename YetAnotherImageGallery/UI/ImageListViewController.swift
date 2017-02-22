@@ -48,8 +48,11 @@ extension ImageListViewController {
         // Do any additional setup after loading the view.
         
         imageListDataSource = ImageListTableDataSource(tableView: tableView, imageCache: imageCache)
+        
         tableView.delegate = self
         tableView.dataSource = imageListDataSource
+        tableView.tableFooterView = UIView() // common hack to hide extra rows
+        
         imageListDataSource.refreshData()
     }
     
