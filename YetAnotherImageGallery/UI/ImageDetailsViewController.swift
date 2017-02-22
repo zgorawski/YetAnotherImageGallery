@@ -42,7 +42,7 @@ extension ImageDetailsViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        imageDetailsDataSource = ImageDetailsDataSource(model: selectedFeed)
+        imageDetailsDataSource = ImageDetailsDataSource(flickrFeedItem: selectedFeed)
 
         tableView.dataSource = imageDetailsDataSource
         tableView.tableFooterView = UIView() // common hack to hide extra rows

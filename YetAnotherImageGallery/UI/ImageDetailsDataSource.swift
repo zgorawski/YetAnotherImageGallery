@@ -9,49 +9,47 @@
 import UIKit
 import Timepiece
 
+struct ImageDataViewModel {
+    let propertyName: String
+    let propertyValue: String
+}
+
 class ImageDetailsDataSource: NSObject {
     
     fileprivate let cellRI = "ImageDetailsCellRI"
-    var model: FlickrFeedItem
+    fileprivate let model: [ImageDataViewModel]
     
-    init(model: FlickrFeedItem) {
-        self.model = model
+    init(flickrFeedItem: FlickrFeedItem) {
+        
+        model = [
+            ImageDataViewModel(propertyName: "Title", propertyValue: flickrFeedItem.title),
+            ImageDataViewModel(propertyName: "Author", propertyValue: flickrFeedItem.author),
+            ImageDataViewModel(propertyName: "Date taken", propertyValue: flickrFeedItem.dateTaken.string(inDateStyle: .medium, andTimeStyle: .short)),
+            ImageDataViewModel(propertyName: "Date published", propertyValue: flickrFeedItem.published.string(inDateStyle: .medium, andTimeStyle: .short)),
+            ImageDataViewModel(propertyName: "Tags", propertyValue: flickrFeedItem.tags.joined(separator: ", "))
+        ]
     }
 }
 
 extension ImageDetailsDataSource: UITableViewDataSource {
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return model.count
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 6
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: cellRI, for: indexPath)
-        
-        switch indexPath.row {
-        case 0:
-            cell.detailTextLabel?.text = model.title
-            cell.textLabel?.text = "Title"
-        case 1:
-            cell.detailTextLabel?.text = model.author
-            cell.textLabel?.text = "Author"
-        case 2:
-            cell.detailTextLabel?.text = model.authorId
-            cell.textLabel?.text = "AuthorId"
-        case 3:
-            cell.detailTextLabel?.text = model.dateTaken.string(inDateStyle: .medium, andTimeStyle: .short)
-            cell.textLabel?.text = "Date taken"
-        case 4:
-            cell.detailTextLabel?.text = model.published.string(inDateStyle: .medium, andTimeStyle: .short)
-            cell.textLabel?.text = "Published"
-        case 5:
-            cell.detailTextLabel?.text = model.tags.joined(separator: ", ")
-            cell.textLabel?.text = "Tags"
-        default:
-            break
-        }
+        cell.textLabel?.text = model[indexPath.section].propertyValue
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String?  {
+        return model[section].propertyName
     }
 }
