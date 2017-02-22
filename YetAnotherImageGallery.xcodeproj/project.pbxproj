@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		99E165F61E5DF2CF00A5D1F9 /* FlickrFeedInterpreterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E165F51E5DF2CF00A5D1F9 /* FlickrFeedInterpreterTests.swift */; };
 		99F907CE1E5C9F4A00FF0920 /* ImagesList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99F907CD1E5C9F4A00FF0920 /* ImagesList.storyboard */; };
 		99F907D11E5CA10000FF0920 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99F907D01E5CA10000FF0920 /* Alamofire.framework */; };
 		99F907D31E5CA10400FF0920 /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99F907D21E5CA10400FF0920 /* AlamofireImage.framework */; };
@@ -29,7 +30,6 @@
 		99FFEB3B1E5B8241003A3F77 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FFEB3A1E5B8241003A3F77 /* AppDelegate.swift */; };
 		99FFEB421E5B8241003A3F77 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99FFEB411E5B8241003A3F77 /* Assets.xcassets */; };
 		99FFEB451E5B8241003A3F77 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99FFEB431E5B8241003A3F77 /* LaunchScreen.storyboard */; };
-		99FFEB501E5B8241003A3F77 /* YetAnotherImageGalleryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FFEB4F1E5B8241003A3F77 /* YetAnotherImageGalleryTests.swift */; };
 		99FFEB5B1E5B8241003A3F77 /* YetAnotherImageGalleryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FFEB5A1E5B8241003A3F77 /* YetAnotherImageGalleryUITests.swift */; };
 		99FFEB691E5B84E7003A3F77 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 99FFEB681E5B84E7003A3F77 /* Cartfile */; };
 		99FFEB6B1E5B89A0003A3F77 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 99FFEB6A1E5B89A0003A3F77 /* .gitignore */; };
@@ -53,6 +53,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		99E165F51E5DF2CF00A5D1F9 /* FlickrFeedInterpreterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlickrFeedInterpreterTests.swift; sourceTree = "<group>"; };
 		99F907CD1E5C9F4A00FF0920 /* ImagesList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ImagesList.storyboard; sourceTree = "<group>"; };
 		99F907D01E5CA10000FF0920 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		99F907D21E5CA10400FF0920 /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = Carthage/Build/iOS/AlamofireImage.framework; sourceTree = "<group>"; };
@@ -78,7 +79,6 @@
 		99FFEB441E5B8241003A3F77 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		99FFEB461E5B8241003A3F77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		99FFEB4B1E5B8241003A3F77 /* YetAnotherImageGalleryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YetAnotherImageGalleryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		99FFEB4F1E5B8241003A3F77 /* YetAnotherImageGalleryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YetAnotherImageGalleryTests.swift; sourceTree = "<group>"; };
 		99FFEB511E5B8241003A3F77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		99FFEB561E5B8241003A3F77 /* YetAnotherImageGalleryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YetAnotherImageGalleryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		99FFEB5A1E5B8241003A3F77 /* YetAnotherImageGalleryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YetAnotherImageGalleryUITests.swift; sourceTree = "<group>"; };
@@ -117,6 +117,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		99E165F31E5DF28900A5D1F9 /* DomainLogic */ = {
+			isa = PBXGroup;
+			children = (
+				99E165F41E5DF29B00A5D1F9 /* FlickrFeed */,
+			);
+			name = DomainLogic;
+			sourceTree = "<group>";
+		};
+		99E165F41E5DF29B00A5D1F9 /* FlickrFeed */ = {
+			isa = PBXGroup;
+			children = (
+				99E165F51E5DF2CF00A5D1F9 /* FlickrFeedInterpreterTests.swift */,
+			);
+			name = FlickrFeed;
+			sourceTree = "<group>";
+		};
 		99F907C81E5C9E7000FF0920 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
@@ -244,7 +260,7 @@
 		99FFEB4E1E5B8241003A3F77 /* YetAnotherImageGalleryTests */ = {
 			isa = PBXGroup;
 			children = (
-				99FFEB4F1E5B8241003A3F77 /* YetAnotherImageGalleryTests.swift */,
+				99E165F31E5DF28900A5D1F9 /* DomainLogic */,
 				99FFEB511E5B8241003A3F77 /* Info.plist */,
 			);
 			path = YetAnotherImageGalleryTests;
@@ -441,7 +457,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				99FFEB501E5B8241003A3F77 /* YetAnotherImageGalleryTests.swift in Sources */,
+				99E165F61E5DF2CF00A5D1F9 /* FlickrFeedInterpreterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
